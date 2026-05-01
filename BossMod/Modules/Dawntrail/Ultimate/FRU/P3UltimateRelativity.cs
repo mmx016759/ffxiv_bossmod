@@ -225,7 +225,7 @@ class P3UltimateRelativity(BossModule module) : Components.CastCounter(module, d
 
     private Angle? SupportDir(int fireOrder, bool? preferEast) => fireOrder switch
     {
-        2 => 90.Degrees(),
+        2 =>-90.Degrees(),
         3 => preferEast == null ? null : preferEast.Value ? -45.Degrees() : 45.Degrees(),
         _ => 0.Degrees()
     };
@@ -233,7 +233,7 @@ class P3UltimateRelativity(BossModule module) : Components.CastCounter(module, d
     private Angle? DDDir(int fireOrder, bool? preferEast) => fireOrder switch
     {
         1 => preferEast == null ? null : preferEast.Value ? -135.Degrees() : 135.Degrees(),
-        2 => -90.Degrees(),
+        2 => 90.Degrees(),
         _ => 180.Degrees()
     };
 
